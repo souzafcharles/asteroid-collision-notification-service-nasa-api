@@ -1,4 +1,4 @@
-package com.github.souzafcharles.asteroid_alerting_service;
+package com.github.souzafcharles.asteroidalertingservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
