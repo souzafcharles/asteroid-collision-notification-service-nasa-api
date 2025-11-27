@@ -8,6 +8,7 @@
 ## 1. Architecture & Event Flow
 <p align="justify"> The system architecture integrates synchronous data retrieval from NASA's NeoWs API with an asynchronous event-driven workflow for asteroid alert processing. The design ensures scalability, fault isolation, and reliable delivery through Kafka as the event backbone. The Notification Service persists processed events in MySQL and dispatches email alerts, maintaining clear separation of responsibilities across components. </p>
 
+```
 ┌──────────────────────────────────────────────────────────────┐
 │                      NASA Open APIs                          │
 │   Asteroids – NeoWs (Near Earth Object Web Service)          │
@@ -37,7 +38,8 @@
       │    PostgreSQL    │              │       Email      │
       └──────────────────┘              └──────────────────┘
 
-                                                        
+
+```
 
 <p align="justify"> The event flow begins with a synchronous request to NASA's NeoWs API to retrieve near-Earth object information. Once processed, potential asteroid threats are published asynchronously to Kafka, allowing high-throughput and decoupled event propagation. The Notification Service consumes these messages, stores alert data in MySQL, and triggers outbound email notifications to end users. </p>
 
